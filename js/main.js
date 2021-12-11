@@ -40,13 +40,13 @@ function hamburgerOpen() {
     let topMenu = document.getElementById('topMenu');
     let hamburger = document.getElementById('hamburger');
     if (counter % 2 == 0) {
-        hamburger.classList.add('open');
-        topMenu.classList.add('topMenuOpen');
-        counter++;
+      hamburger.classList.add('open');
+      topMenu.classList.add('topMenuOpen');
+      counter++;
     } else {
-        hamburger.classList.remove('open');
-        topMenu.classList.remove('topMenuOpen');
-        counter++;
+      hamburger.classList.remove('open');
+      topMenu.classList.remove('topMenuOpen');
+      counter++;
     }
 }
 
