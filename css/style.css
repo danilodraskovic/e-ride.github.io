@@ -513,6 +513,10 @@ footer ul:nth-child(2) li:last-child a i {
   border: 1px solid red !important;
 }
 
+#form input, #form select {
+  margin-bottom: 20px;
+}
+
 #form span {
   color: rgb(255, 0, 0) !important;
 }
