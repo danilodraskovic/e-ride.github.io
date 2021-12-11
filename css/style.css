@@ -33,13 +33,13 @@ h3 {
 }
 
 .primaryColor {
-  color: #369FFF !important;
+  color: #369FFF;
 }
 .secondaryColor {
-  color: #FB865A !important;
+  color: #FB865A;
 }
 .tertiaryColor {
-  color: #E8F5FF !important;
+  color: #E8F5FF;
 }
 
 .primaryBG {
@@ -503,6 +503,75 @@ footer ul:nth-child(2) li:last-child a i {
 #about-wrapper > .row:nth-child(3) > div:first-child {
   background: url(../img/guy-on-scooter.jpg) center no-repeat;
   background-size: cover;
+}
+
+.success {
+  border: 1px solid rgb(30, 190, 30) !important;
+}
+
+.fail {
+  border: 1px solid red !important;
+}
+
+#form span {
+  color: rgb(255, 0, 0) !important;
+}
+
+textarea {
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  height: 100px;
+}
+
+#form button {
+  background-color: #369FFF;
+  color: #FFF;
+  border: 1px solid #369FFF;
+}
+
+#form button:hover {
+  background-color: #FFF;
+  color: #369FFF;
+}
+
+iframe {
+  height: 600px;
+}
+
+#author-landing {
+  background-color: rgba(0, 0, 0, .2);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#author-landing a {
+  color: #369FFF;
+}
+
+#author-landing a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #369FFF;
+}
+
+#modalOpen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, .7);
+  justify-content: center;
+  align-items: center;
+}
+
+#modalOpen > div {
+  background-color: #FFF;
+  height: 25vh;
+}
+
+.modalOpen {
+  display: flex !important;
 }
 
 @media screen and (max-width: 1200px) {

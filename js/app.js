@@ -4,7 +4,7 @@ console.log("OK");
 
 var serviceBoxIcon = ['class="fas fa-biking primaryColor"', 'class="fas fa-hard-hat primaryColor"', 'class="fas fa-calendar primaryColor"', 'class="fas fa-tags primaryColor"'];
 var serviceBoxHeading = ['Various choices', 'Safety Number 1', 'Flexible schedule', 'Best prices'];
-var serviceBoxText = ['We have prepared various types of vehicles', 'We also provide a pracitice course if needed', 'You can change what time you want to rent free of charge', 'Cheap, safe and reliable - that\'s us.'];
+var serviceBoxText = ['We have prepared various types of vehicles', 'We also provide a pracitice course if needed', 'You can change what time you want to rent free of charge', 'Cheap, safe and reliable - that\'s us'];
 
 var servicesRow = document.getElementById('servicesRow');
 

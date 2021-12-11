@@ -3,18 +3,18 @@ console.log("OK");
 //Filters
 
 $(document).ready(function() {
-    $('#filterOptions li a').click(function() {
-      var ourClass = $(this).attr('class');
-      $('#filterOptions li').removeClass('active');
-      $(this).parent().addClass('active');
-      if(ourClass == 'all') {
-        $('#productList').children('div.item').show();
-      } else {
-        $('#productList').children('div:not(.' + ourClass + ')').hide();
-        $('#productList').children('div.' + ourClass).show();
-      }
-      return false;
-    });
+  $('#filterOptions li a').click(function() {
+    var ourClass = $(this).attr('class');
+    $('#filterOptions li').removeClass('active');
+    $(this).parent().addClass('active');
+    if(ourClass == 'all') {
+      $('#productList').children('div.item').show();
+    } else {
+      $('#productList').children('div:not(.' + ourClass + ')').hide();
+      $('#productList').children('div.' + ourClass).show();
+    }
+    return false;
+  });
 });
 
 
@@ -22,9 +22,9 @@ $(document).ready(function() {
 
 var productsWrapper = document.getElementById('productList');
 for (let i = 0; i < 12; i++) {
-    let productBox = document.createElement('div');
-    productBox.classList.add('col-lg-4', 'col-md-6', 'col-12', 'p-0', 'product-box', 'item');
-    productList.appendChild(productBox);
+  let productBox = document.createElement('div');
+  productBox.classList.add('col-lg-4', 'col-md-6', 'col-12', 'p-0', 'product-box', 'item');
+  productList.appendChild(productBox);
 }
 
 var productNames = ['Render 8.0', 'Solution Hybrid 2.0', 'ZR Team Hybrid 6.0', 'THRON 6.9', 'Jetson Impact Extreme', 'Ride Swft Blaze', ' Hover-1 Blast', 'Hover-1 I-200', 'Hover-1 - Alpha', 'Hover-1 - Aviator', 'Ninebot KickScooter E45', 'Scooter 4'];
@@ -45,21 +45,29 @@ var productSrc = ['img/bike1.png', 'img/bike2.png', 'img/bike3.png', 'img/bike4.
 var productBoxes = document.querySelectorAll('.product-box');
 
 for (let i = 0; i < productBoxes.length; i++) {
-    let productImg = document.createElement('div');
-    productImg.classList.add('product-img');
-    productImg.innerHTML = `<img src="${productSrc[i]}" alt="" />`;
-    let productInfo = document.createElement('div');
-    productInfo.classList.add('product-info');
-    productInfo.innerHTML = `<h3>${productNames[i]}</h3>
-                            <p>${productDesc[i]}</p>
-                            <button role="button">Rent</button>`;
-    productBoxes[i].appendChild(productImg);
-    productBoxes[i].appendChild(productInfo);
-    if (i < 4) {
-        productBoxes[i].classList.add('category-bikes');
-    } else if (i > 3 && i < 8) {
-        productBoxes[i].classList.add('category-hovers');
-    } else {
-        productBoxes[i].classList.add('category-scooters');
-    }
+  let productImg = document.createElement('div');
+  productImg.classList.add('product-img');
+  productImg.innerHTML = `<img src="${productSrc[i]}" alt="" />`;
+  let productInfo = document.createElement('div');
+  productInfo.classList.add('product-info');
+  productInfo.innerHTML = `<h3>${productNames[i]}</h3>
+                          <p>${productDesc[i]}</p>
+                          <button class="rentBtn" role="button">Rent</button>`;
+  productBoxes[i].appendChild(productImg);
+  productBoxes[i].appendChild(productInfo);
+  if (i < 4) {
+    productBoxes[i].classList.add('category-bikes');
+  } else if (i > 3 && i < 8) {
+    productBoxes[i].classList.add('category-hovers');
+  } else {
+    productBoxes[i].classList.add('category-scooters');
+  }
+}
+
+var rentButtons = document.querySelectorAll('.rentBtn');
+var rentModal = document.getElementById('modalOpen');
+for (i = 0; i < rentButtons.length; i++) {
+  rentButtons[i].addEventListener('click', () => {
+    rentModal.classList.add('modalOpen');
+  })
 }

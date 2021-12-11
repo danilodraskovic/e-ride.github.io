@@ -4,7 +4,7 @@ console.log("OK");
 
 var nav = document.getElementById('navLinks');
 var linkNames = new Array('Home', 'About', 'Rent', 'Contact', 'Author');
-var linkHrefs = new Array('index.html', 'about.html', 'rent.html', 'contact.html', 'https://danilodraskovic.github.io/');
+var linkHrefs = new Array('index.html', 'about.html', 'rent.html', 'contact.html', 'author.html');
 for (let i = 0; i < linkNames.length; i++) {
     let navLi = document.createElement('li');
     let navA = document.createElement('a');
