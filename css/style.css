@@ -587,6 +587,7 @@ iframe {
   opacity: 0;
   transition: .3s;
   color: #000;
+  z-index: 999;
 }
 
 #scroll-to-top:hover {
@@ -678,8 +679,8 @@ iframe {
   #wrapper h2, #wrapper p {
     text-align: center !important;
   }
-  body > .container-fluid:nth-child(2), body > .container-fluid:nth-child(4) {
-    padding: 50px 0 !important;
+  #services-wrapper, body > .container-fluid:nth-child(4) {
+    padding: 50px 0px !important;
   }
   #wrapper > .row > div:nth-child(2), #wrapper > .row > div:nth-child(1), #wrapper > .row > div:nth-child(6) {
     padding: 0 20px !important;
