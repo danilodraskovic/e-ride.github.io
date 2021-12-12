@@ -82,6 +82,7 @@ for (i = 0; i < rentButtons.length; i++) {
 var moon = document.getElementById('darkMode');
 var pElements = document.querySelectorAll('p');
 var h3Elements = document.querySelectorAll('h3');
+var productInfo = document.querySelectorAll('.product-info');
 moon.addEventListener('click', () => {
     if (moon.classList.contains('far')) {
         moon.classList.remove('far')
@@ -95,6 +96,9 @@ moon.addEventListener('click', () => {
         for (let i=0; i<h3Elements.length; i++) {
           h3Elements[i].style.color = '#FFF';
         }
+        for (let i=0; i<productInfo.length; i++) {
+          productInfo[i].style.backgroundColor = '#151515';
+        }
     } else {
         moon.classList.remove('fas')
         moon.classList.add('far');
@@ -106,6 +110,9 @@ moon.addEventListener('click', () => {
         }
         for (let i=0; i<h3Elements.length; i++) {
           h3Elements[i].style.color = '#000';
+        }
+        for (let i=0; i<productInfo.length; i++) {
+          productInfo[i].style.backgroundColor = '#FFF';
         }
     }
 })
