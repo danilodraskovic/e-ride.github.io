@@ -98,6 +98,12 @@ for (let i = 0; i < spans.length; i++) {
 
 //Scroll animation
 
+var tooNarrow = false;
+
+$(window).resize(function(){
+  tooNarrow = $(window).width() <= 740
+}).trigger('resize');
+
 (function($) {
     $.fn.visible = function(partial) {
       var $t = $(this), 
@@ -115,20 +121,22 @@ for (let i = 0; i < spans.length; i++) {
   
 var win = $(window);
 var allMods = $(".module");
-allMods.each(function(i, el) {
+if (!tooNarrow) {
+  allMods.each(function(i, el) {
     var el = $(el);
     if (el.visible(true)) {
       el.addClass("already-visible"); 
     } 
-});
-win.scroll(function(event) {
+  });
+  win.scroll(function(event) {
     allMods.each(function(i, el) {
       var el = $(el);
       if (el.visible(true)) {
         el.addClass("come-in"); 
       } 
     });  
-});
+  });
+}
 
 //Back to top
 
