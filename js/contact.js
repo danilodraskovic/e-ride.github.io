@@ -20,7 +20,7 @@ const email = document.getElementById('email');
 const address = document.getElementById('address');
 const subject = document.getElementById('subject');
 const message = document.getElementById('message');
-const checkBox = document.getElementById('gridCheck');
+const checkBox = document.getElementById('agree');
 const submit = document.getElementById('submit');
 var errorMessages = document.querySelectorAll('#form span');
 
@@ -28,17 +28,14 @@ var nameApprove = false;
 var emailApprove = false;
 var selectApprove = false;
 var messageApprove = false;
+var checkBoxApprove = false;
 
 var nameRegex = /^[A-ZČĆŽĐŠ][a-zćčžđš]{1,14}\s([A-ZČĆŽĐŠ][a-zćčžđš]{1,14})?\s?[A-ZČĆŽŠĐ][a-zćčžđš]{1,19}$/;
 var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 //Check name
 
-fullName.addEventListener('focus', () => {
-    fullName.classList.add('fail');
-});
-
-fullName.addEventListener('blur', () => {
+function checkName () {
     if (fullName.value.match(nameRegex)) {
         fullName.classList.remove('fail')
         fullName.classList.add('success');
@@ -51,15 +48,17 @@ fullName.addEventListener('blur', () => {
         errorMessages[1].textContent = "Change the format of the name.";
         nameApprove = false;
     }
-})
+}
+
+fullName.addEventListener('focus', () => {
+    fullName.classList.add('fail');
+});
+
+fullName.addEventListener('blur', checkName);
 
 //Check email
 
-email.addEventListener('focus', () => {
-    email.classList.add('fail');
-});
-
-email.addEventListener('blur', () => {
+function checkEmail () {
     if (email.value.match(emailRegex)) {
         email.classList.remove('fail')
         email.classList.add('success');
@@ -72,11 +71,17 @@ email.addEventListener('blur', () => {
         errorMessages[3].textContent = "Change the format of the email.";
         emailApprove = false;
     }
-})
+}
+
+email.addEventListener('focus', () => {
+    email.classList.add('fail');
+});
+
+email.addEventListener('blur', checkEmail);
 
 //Subject check
 
-subject.addEventListener('blur', () => {
+function checkSubject () {
     let selectedValue = subject.options[subject.selectedIndex].value;
     if (selectedValue == "choose") {
         subject.classList.add('fail');
@@ -88,11 +93,13 @@ subject.addEventListener('blur', () => {
         errorMessages[5].textContent = "";
         selectApprove = true;
     }
-})
+}
+
+subject.addEventListener('blur', checkSubject);
 
 //Message check
 
-message.addEventListener('blur', () => {
+function checkMessage () {
     if (message.value < 1) {
         errorMessages[7].textContent = "Field can't be empty.";
         message.classList.add('fail');
@@ -102,15 +109,35 @@ message.addEventListener('blur', () => {
         message.classList.remove('fail');
         message.classList.add('success');
         messageApprove = true;
-        let approve = nameApprove && emailApprove && selectApprove && messageApprove;
-        if (approve) {
-            submit.removeAttribute('disabled');
-            submit.addEventListener('click', () => {
-                alert('Uspesno poslata poruka');
-            })
-        }
     }
-})
+}
 
+message.addEventListener('blur', checkMessage);
+
+//Checkbox check
+
+function checkCheckbox () {
+    if (checkBox.checked) {
+        checkBoxApprove = true;
+        errorMessages[9].textContent = "";
+    } else {
+        errorMessages[9].textContent = "You have to agree in order to send.";
+    }
+}
+
+//Submit check
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    checkName();
+    checkEmail();
+    checkSubject();
+    checkMessage();
+    checkCheckbox();
+    if (nameApprove && emailApprove && selectApprove && messageApprove && checkBoxApprove){
+        alert("Successfully sent!");
+        setTimeout("location.reload(true);", 0);
+    }
+});
 
 
