@@ -43,11 +43,13 @@ var productDesc = ['The RENDER world is already starting at a high level with th
 var productSrc = ['img/bike1.png', 'img/bike2.png', 'img/bike3.png', 'img/bike4.png', 'img/hover1.png', 'img/hover2.png', 'img/hover3.png', 'img/hover4.png', 'img/scooter1.png', 'img/scooter2.png', 'img/scooter3.png', 'img/scooter4.png'];
 
 var productBoxes = document.querySelectorAll('.product-box');
+var imgCounter = 0;
 
 for (let i = 0; i < productBoxes.length; i++) {
+  imgCounter++;
   let productImg = document.createElement('div');
   productImg.classList.add('product-img');
-  productImg.innerHTML = `<img src="${productSrc[i]}" alt="" />`;
+  productImg.innerHTML = `<img src="${productSrc[i]}" alt="Product ${imgCounter}" />`;
   let productInfo = document.createElement('div');
   productInfo.classList.add('product-info');
   productInfo.innerHTML = `<h3>${productNames[i]}</h3>

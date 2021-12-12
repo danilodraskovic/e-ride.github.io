@@ -25,7 +25,7 @@ var wrapper = document.getElementById("wrapper");
 var subHeading = ['Join our <span>community</span> and meet new <span>friends</span>', 'The vehicles are in <span>good</span> shape and the equipment is <span>comfortable</span>', 'We provide <span>various</span> types of <span>vehicles</span> for you'];
 var subText = ['There\'s no better way to meet new friends than a ride in the park together on a sunny day.', 'With rides in great shape and comfortable protective equipment for all ages we maintain a professional reputation.', 'We have provided various types of rides and equipment such as helmets , protective suits and pants from begginers to expert riders.'];
 var subImg = ['img/friends.jpg', 'img/community.jpg', 'img/vehicles.jpg'];
-var subAlt = ['Alt', 'Alt', 'Alt'];
+var subAlt = ['Friends', 'Rides', 'Choice'];
 
 var rows = document.querySelectorAll('.row');
 
