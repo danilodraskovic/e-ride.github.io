@@ -69,6 +69,9 @@ var rentModal = document.getElementById('modalOpen');
 for (i = 0; i < rentButtons.length; i++) {
   rentButtons[i].addEventListener('click', () => {
     rentModal.classList.add('modalOpen');
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 1000);
   })
 }
 
