@@ -124,7 +124,7 @@ for (let i = 0; i < spans.length; i++) {
       compareBottom = partial === true ? _top : _bottom;
       return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
     };
-});
+})(jQuery);
   
   
 var win = $(window);
