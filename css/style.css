@@ -229,8 +229,10 @@ ul {
 }
 
 #testimonials {
+  padding: 75px 0;
   background-color: #E8F5FF;
-  padding: 75px 0 50px 0;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .slideItem {
@@ -270,7 +272,7 @@ ul {
 }
 
 .user-info span {
-  color: rgba(0, 0, 0, .5) !important;
+  color: rgba(0, 0, 0, .5);
   font-weight: lighter;
 }
 

@@ -84,20 +84,6 @@ for (let i = 0; i < socials.length; i++) {
     footerSocials.appendChild(socialLi);
 }
 
-//Dark mode
-
-var moon = document.getElementById('darkMode');
-
-moon.addEventListener('click', () => {
-    if (moon.classList.contains('far')) {
-        moon.classList.remove('far')
-        moon.classList.add('fas');
-    } else {
-        moon.classList.remove('fas')
-        moon.classList.add('far');
-    }
-})
-
 //Span coloring
 
 var spans = document.querySelectorAll('span');
@@ -159,8 +145,7 @@ $(document).ready(function() {
     $(scrollTop).click(function() {
       $('html, body').animate({
         scrollTop: 0
-      }, 800);
+      }, 100);
       return false;
     });
 })
-

@@ -58,7 +58,7 @@ for (let i = 0; i < subHeading.length; i++) {
 var userImg = ['img/user1.png', 'img/user2.jpg', 'img/user3.jpg', 'img/user4.jpg', 'img/user5.jpg', 'img/user6.jpg', 'img/user7.jpg', 'img/user8.jpg', 'img/user9.jpg', ];
 var userName = ['Graham Westbrook', 'Donald Lowell', 'Franklin Burns', 'Kira Wortham', 'Kaila Winter', 'Carry Holme', 'Zed Augustine', 'Terence Nielson', 'Brant Edison'];
 var userJob = ['Conservationist', 'Fitness instructor', 'Mathematician', 'Editor', 'Lawyer', 'Park-keeper', 'Childminder', 'Fashion designer', 'Pest controller'];
-var reviews = ['e-Ride is the best service of this type. Since I care about nature I try to drive as little as possible and e-Ride allows me to travel quickly without needing to start the car.', 'It has helped me tremendously over the past couple of years because I live far from the gym I work at. This way I save energy for my classes and I get there fast.', 'I love e-Ride! I am super into futuristic stuff and hoverboards and electric scooters are the closest thing to the future that we have. I hope they update their catalog as the new stuff comes out!', 'I can\'t count how many times I didn\' feel like running errands and e-Ride has completely changed that. Errands are now the best part of my day because I get to cruise through the city!', 'Some people would say that I am too old for electric rides but I say you are never too old for excitement! e-Ride has provided me with tons of relaxation from work.', 'There\'s no better feeling than riding through the park with wind in your hair as you listen to music. e-Ride has made my life so much easier and much more enjoyable.', 'The kids absolutely love e-Ride, especially the electric hoverboards. I practically just sit and watch them as they play for hours and hours. Definitely recommend e-Ride!', 'They have a big catalog of color choices so I take a different one everyday, it\'s kinda my daily routine. I recommended them to all my friends and ou should too. e-Ride ROCKS!', 'I have saved so much money on gas since I went electric and I couldn\'t have done it without e-Ride! They have made moving through the busy city of New York a breeze.'];
+var reviews = ['e-Ride is the best service of this type. Since I care about nature I try to drive as little as possible and e-Ride allows me to travel quickly without needing to start the car.', 'It has helped me tremendously over the past couple of years because I live far from the gym I work at. This way I save energy for my classes and I get there fast. Definitely recommend it', 'I love e-Ride! I am super into futuristic stuff and hoverboards and electric scooters are the closest thing to the future that we have. I hope they update their catalog as the new stuff comes out!', 'I can\'t count how many times I didn\' feel like running errands and e-Ride has completely changed that. Errands are now the best part of my day because I get to cruise through the city!', 'Some people would say that I am too old for electric rides but I say you are never too old for excitement! e-Ride has provided me with tons of relaxation from work.', 'There\'s no better feeling than riding through the park with wind in your hair as you listen to music. e-Ride has made my life so much easier and much more enjoyable.', 'The kids absolutely love e-Ride, especially the electric hoverboards. I practically just sit and watch them as they play for hours and hours. Definitely recommend e-Ride! They changed the game!', 'They have a big catalog of color choices so I take a different one everyday, it\'s kinda my daily routine. I recommended them to all my friends and ou should too. e-Ride ROCKS!', 'I have saved so much money on gas since I went electric and I couldn\'t have done it without e-Ride! They have made moving through the busy city of New York a breeze.'];
 var testimonialsRow = document.getElementById('testimonialsRow');
 var imgCounter = 0;
 
@@ -169,6 +169,81 @@ for (let i = 0; i < spans.length; i++) {
         spans[i].setAttribute('class', 'secondaryColor');
     }
 }
+
+var moon = document.getElementById('darkMode');
+var serviceBoxes = document.querySelectorAll('.serviceBox');
+var pElements = document.querySelectorAll('p');
+var h2Elements = document.querySelectorAll('h2');
+var h3Elements = document.querySelectorAll('h3');
+var testimonialBoxes = document.querySelectorAll('.testimonialBox');
+var quotes = document.querySelectorAll('.testimonialBox p:first-child');
+var userInfoSpan = document.querySelectorAll('.user-info span');
+
+moon.addEventListener('click', () => {
+    if (moon.classList.contains('far')) {
+        moon.classList.remove('far')
+        moon.classList.add('fas');
+        document.querySelector('body').style.backgroundColor = '#121212';
+        document.getElementById('services').style.backgroundColor = '#151515';
+        document.getElementById('services').style.boxShadow = '10px 20px 30px #121212';
+        for (let i = 0; i < serviceBoxes.length; i++) {
+            serviceBoxes[i].style.backgroundColor = '#1a1a1a';
+            serviceBoxes[i].style.boxShadow = '10px 20px 30px #121212';
+        }
+        for (let i = 0; i < pElements.length; i++) {
+            pElements[i].style.color = '#FFF';
+        }
+        for (let i = 0; i < h2Elements.length; i++) {
+            h2Elements[i].style.color = '#FFF';
+        }
+        for (let i = 0; i < h3Elements.length; i++) {
+            h3Elements[i].style.color = '#FFF';
+        }
+        document.getElementById('testimonials').style.backgroundColor = '#151515';
+        document.getElementById('testimonials').style.boxShadow = '10px 20px 30px #121212';
+        for (let i = 0; i < testimonialBoxes.length; i++) {
+            testimonialBoxes[i].style.backgroundColor = '#1a1a1a';
+            testimonialBoxes[i].style.boxShadow = '10px 20px 30px #121212';
+        }
+        for (let i = 0; i < quotes.length; i++) {
+            quotes[i].style.color = '#369FFF';
+        }
+        for (let i = 0; i < userInfoSpan.length; i++) {
+            userInfoSpan[i].style.color = 'rgba(255, 255, 255, .5)';
+        }
+        document.getElementById('scroll-to-top').style.color = '#FFF';
+    } else {
+        moon.classList.remove('fas')
+        moon.classList.add('far');
+        document.querySelector('body').style.backgroundColor = '#FFF';
+        document.getElementById('services').style.backgroundColor = '#E8F5FF';
+        for (let i = 0; i < serviceBoxes.length; i++) {
+            serviceBoxes[i].style.backgroundColor = '#FFF';
+            serviceBoxes[i].style.boxShadow = '0px 8px 24px rgba(149, 157, 165, 0.2)';
+        }
+        for (let i = 0; i < pElements.length; i++) {
+            pElements[i].style.color = '#000';
+        }
+        for (let i = 0; i < h2Elements.length; i++) {
+            h2Elements[i].style.color = '#000';
+        }
+        for (let i = 0; i < h3Elements.length; i++) {
+            h3Elements[i].style.color = '#000';
+        }
+        document.getElementById('testimonials').style.backgroundColor = '#E8F5FF';
+        for (let i = 0; i < testimonialBoxes.length; i++) {
+            testimonialBoxes[i].style.backgroundColor = '#FFF';
+            testimonialBoxes[i].style.boxShadow = '0px 8px 24px rgba(149, 157, 165, 0.2)';
+        }
+        for (let i = 0; i < quotes.length; i++) {
+            quotes[i].style.color = '#369FFF';
+        }
+        for (let i = 0; i < userInfoSpan.length; i++) {
+            userInfoSpan[i].style.color = 'rgba(0, 0, 0, .5)';
+        }
+        document.getElementById('scroll-to-top').style.color = '#000';
+    }
+})
 
 
 
