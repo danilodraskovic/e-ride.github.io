@@ -217,6 +217,7 @@ moon.addEventListener('click', () => {
         moon.classList.add('far');
         document.querySelector('body').style.backgroundColor = '#FFF';
         document.getElementById('services').style.backgroundColor = '#E8F5FF';
+        document.getElementById('services').style.boxShadow = 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px';
         for (let i = 0; i < serviceBoxes.length; i++) {
             serviceBoxes[i].style.backgroundColor = '#FFF';
             serviceBoxes[i].style.boxShadow = '0px 8px 24px rgba(149, 157, 165, 0.2)';
@@ -231,6 +232,7 @@ moon.addEventListener('click', () => {
             h3Elements[i].style.color = '#000';
         }
         document.getElementById('testimonials').style.backgroundColor = '#E8F5FF';
+        document.getElementById('testimonials').style.boxShadow = 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px';
         for (let i = 0; i < testimonialBoxes.length; i++) {
             testimonialBoxes[i].style.backgroundColor = '#FFF';
             testimonialBoxes[i].style.boxShadow = '0px 8px 24px rgba(149, 157, 165, 0.2)';
