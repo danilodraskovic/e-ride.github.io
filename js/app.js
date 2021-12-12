@@ -170,6 +170,8 @@ for (let i = 0; i < spans.length; i++) {
     }
 }
 
+//Dark mode
+
 var moon = document.getElementById('darkMode');
 var serviceBoxes = document.querySelectorAll('.serviceBox');
 var pElements = document.querySelectorAll('p');

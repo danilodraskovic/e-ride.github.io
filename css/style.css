@@ -466,7 +466,6 @@ footer ul:nth-child(2) li:last-child a i {
 
 #filterOptions li {
   border-radius: 10px;
-  background-color: #FFF;
   border: 1px solid #369FFF;
   padding: 10px 20px;
   margin: 10px;
@@ -552,6 +551,7 @@ iframe {
 #author-landing {
   background-color: rgba(0, 0, 0, .2);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
 }
 
 #author-landing a {

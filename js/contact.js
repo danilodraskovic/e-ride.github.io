@@ -140,4 +140,52 @@ form.addEventListener('submit', (e) => {
     }
 });
 
+//Dark mode
+
+var moon = document.getElementById('darkMode');
+var labels = document.querySelectorAll('label');
+var inputs = document.querySelectorAll('input');
+var options = document.querySelectorAll('option');
+
+moon.addEventListener('click', () => {
+    if (moon.classList.contains('far')) {
+        moon.classList.remove('far')
+        moon.classList.add('fas');
+        document.querySelector('body').style.backgroundColor = '#121212';
+        document.getElementById('scroll-to-top').style.color = '#FFF';
+        document.querySelector('h1').style.color = '#FFF';
+        document.querySelector('p').style.color = '#FFF';
+        document.getElementById('subject').style.backgroundColor = '#151515';
+        document.querySelector('textarea').style.backgroundColor = '#151515';
+        for (let i=0; i<labels.length; i++) {
+            labels[i].style.color = '#FFF';
+        }
+        for (let i=0; i<options.length; i++) {
+            options[i].style.color = '#FFF';
+        }
+        for (let i=0; i<inputs.length; i++) {
+            inputs[i].style.backgroundColor = '#151515';
+        }
+        document.querySelector('iframe').setAttribute('filter', 'invert(90%)');
+    } else {
+        moon.classList.remove('fas')
+        moon.classList.add('far');
+        document.querySelector('body').style.backgroundColor = '#FFF';
+        document.getElementById('scroll-to-top').style.color = '#000';
+        document.querySelector('h1').style.color = '#000';
+        document.querySelector('p').style.color = '#FFF';
+        document.getElementById('subject').style.backgroundColor = '#FFF';
+        document.querySelector('textarea').style.backgroundColor = '#FFF';
+        for (let i=0; i<labels.length; i++) {
+            labels[i].style.color = '#000';
+        }
+        for (let i=0; i<options.length; i++) {
+            options[i].style.color = '#000';
+        }
+        for (let i=0; i<inputs.length; i++) {
+            inputs[i].style.backgroundColor = '#FFF';
+        }
+    }
+})
+
 

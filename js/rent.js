@@ -71,3 +71,36 @@ for (i = 0; i < rentButtons.length; i++) {
     rentModal.classList.add('modalOpen');
   })
 }
+
+//Dark mode
+
+var moon = document.getElementById('darkMode');
+var pElements = document.querySelectorAll('p');
+var h3Elements = document.querySelectorAll('h3');
+moon.addEventListener('click', () => {
+    if (moon.classList.contains('far')) {
+        moon.classList.remove('far')
+        moon.classList.add('fas');
+        document.querySelector('body').style.backgroundColor = '#121212';
+        document.getElementById('scroll-to-top').style.color = '#FFF';
+        document.querySelector('h1').style.color = '#FFF';
+        for (let i=0; i<pElements.length; i++) {
+          pElements[i].style.color = '#FFF';
+        }
+        for (let i=0; i<h3Elements.length; i++) {
+          h3Elements[i].style.color = '#FFF';
+        }
+    } else {
+        moon.classList.remove('fas')
+        moon.classList.add('far');
+        document.querySelector('body').style.backgroundColor = '#FFF';
+        document.getElementById('scroll-to-top').style.color = '#000';
+        document.querySelector('h1').style.color = '#000';
+        for (let i=0; i<pElements.length; i++) {
+          pElements[i].style.color = '#000';
+        }
+        for (let i=0; i<h3Elements.length; i++) {
+          h3Elements[i].style.color = '#000';
+        }
+    }
+})
