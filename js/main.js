@@ -158,7 +158,7 @@ $(document).ready(function() {
 	});
 })
 
-if (window.location.pathname == '/e-ride.github.io/index.html') {
+if (window.location.pathname == '/e-ride.github.io/index.html' || window.location.pathname == '/e-ride.github.io/') {
 	console.log("OK");
 
 	//Services
