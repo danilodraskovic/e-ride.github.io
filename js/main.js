@@ -733,7 +733,7 @@ if (window.location.pathname == '/e-ride.github.io/contact.html') {
 			document.querySelector('body').style.backgroundColor = '#FFF';
 			document.getElementById('scroll-to-top').style.color = '#000';
 			document.querySelector('h1').style.color = '#000';
-			document.querySelector('p').style.color = '#FFF';
+			document.querySelector('p').style.color = '#000';
 			document.getElementById('subject').style.backgroundColor = '#FFF';
 			document.querySelector('textarea').style.backgroundColor = '#FFF';
 			for (let i = 0; i < labels.length; i++) {
