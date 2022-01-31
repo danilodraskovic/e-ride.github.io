@@ -266,37 +266,6 @@ if (window.location.pathname == '/e-ride.github.io/index.html' || window.locatio
 	rearrange(maxWidth);
 	maxWidth.addListener(rearrange);
 
-	//Slider
-
-	let slideIndex = 1;
-	showSlides(slideIndex);
-
-	function currentSlide(n) {
-		showSlides(slideIndex = n);
-	}
-
-	document.querySelector('.previous').addEventListener('click', () => {
-		showSlides(slideIndex -= 1);
-	})
-
-	document.querySelector('.next').addEventListener('click', () => {
-		showSlides(slideIndex += 1);
-	})
-
-	function showSlides(n) {
-		let slides = document.getElementsByClassName('slideItem');
-		if (n > slides.length) {
-			slideIndex = 1;
-		}
-		if (n < 1) {
-			slideIndex = slides.length;
-		}
-		for (let slide of slides) {
-			slide.classList.add('slide-display');
-		}
-		slides[slideIndex - 1].classList.remove('slide-display');
-	}
-
 	//FAQ
 
 	var questions = document.querySelectorAll('.faq-question');
@@ -409,6 +378,37 @@ if (window.location.pathname == '/e-ride.github.io/index.html' || window.locatio
 			document.getElementById('scroll-to-top').style.color = '#000';
 		}
 	})
+
+	//Slider
+
+	let slideIndex = 1;
+	showSlides(slideIndex);
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	document.querySelector('.previous').addEventListener('click', () => {
+		showSlides(slideIndex -= 1);
+	})
+
+	document.querySelector('.next').addEventListener('click', () => {
+		showSlides(slideIndex += 1);
+	})
+
+	function showSlides(n) {
+		let slides = document.getElementsByClassName('slideItem');
+		if (n > slides.length) {
+			slideIndex = 1;
+		}
+		if (n < 1) {
+			slideIndex = slides.length;
+		}
+		for (let slide of slides) {
+			slide.classList.add('slide-display');
+		}
+		slides[slideIndex - 1].classList.remove('slide-display');
+	}
 }
 
 if (window.location.pathname == '/e-ride.github.io/about.html') {
